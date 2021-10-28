@@ -26,7 +26,7 @@ public class CartStepDefinitions {
     @Given("that {string} has opened the ecommerce")
     public void thatHasOpenedTheEcommerce(String actorName) {
         // Write code here that turns the phrase above into concrete actions
-        theActorCalled(actorName).wasAbleTo(Goto.theUrl());
+        OnStage.theActorCalled(actorName).wasAbleTo(Goto.theUrl());
     }
 
 
