@@ -1,9 +1,12 @@
 package io.sailor.demo.stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.sailor.demo.questions.ProductWas;
+import io.sailor.demo.taks.Add;
 import io.sailor.demo.taks.Goto;
 import io.sailor.demo.taks.Select;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -13,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 
 public class CartStepDefinitions {
@@ -33,19 +37,19 @@ public class CartStepDefinitions {
 
 
     @When("he selects the product from the sections")
-    public void heSelectsTheProductFromTheSections(io.cucumber.datatable.DataTable data) {
+    public void heSelectsTheProductFromTheSections(DataTable data) {
 theActorInTheSpotlight().attemptsTo(Select.theProduct(data));
     }
 
     @When("he adds the products to the cart whith")
-    public void heAddsTheProductsToTheCartWhith(io.cucumber.datatable.DataTable dataTable) {
-     //   theActorInTheSpotlight().attemptsTo();
+    public void heAddsTheProductsToTheCartWhith(DataTable dataTable) {
+        theActorInTheSpotlight().attemptsTo(Add.theProductoWithThe(dataTable));
 
     }
 
     @Then("he should see the added product in the cart")
     public void heShouldSeeTheAddedProductInTheCart() {
-//theActorInTheSpotlight().should(seeThat(""));
+theActorInTheSpotlight().should(seeThat(ProductWas.Added()));
     }
 
 

@@ -12,9 +12,9 @@ Feature: Cart Operations
     Then he should see the added product in the cart
 
   Examples:
-    | user_category | user_subcategory | user_product               | sizeType    | size  | quantity | discount |
-    | Accessories   | Paints           | Light Speed Yellow Paint   | buket size  | 2.5 L | 4        | yes      |
-    | Groceries     | Juices           | Apple Juice                | bottle size | 2 L   | 1        | no       |
-    | Groceries     | Alcohol          | Red Wine                   |             |       | 8        | yes      |
+    | user_category | user_subcategory | user_product             | sizeType    | size | quantity | discount |
+    | Accessories   | Paints           | Light Speed Yellow Paint | Bucket Size | 2.5l | 4        | yes      |
+    | Groceries     | Juices           | Apple Juice              | Bottle Size | 2l   | 1        | no       |
+    | Groceries     | Alcohol          | Red Wine                 |             |      | 8        | yes      |
 
 

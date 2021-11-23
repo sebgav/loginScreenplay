@@ -36,5 +36,8 @@ public class Select implements Task {
                 Click.on(SUBCATEGORY.of(String.valueOf(values.get(0).get("subcategory"))).resolveFor(actor)),
                 Click.on(PRODUCT.of(String.valueOf(values.get(0).get("product"))).resolveFor(actor))
         );
+
+        actor.remember("subcategory",values.get(0).get("subcategory"));
+        actor.remember("product",values.get(0).get("product").toUpperCase());
     }
 }
