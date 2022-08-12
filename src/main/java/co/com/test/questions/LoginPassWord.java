@@ -28,6 +28,7 @@ public class LoginPassWord implements Question {
             WaitUntil.the(LBL_WITH_PASSWORDBAD_MSG,isVisible());
             actor.attemptsTo(
                     Ensure.that(LBL_WITH_PASSWORDBAD_MSG).textContent().contains("La contraseña es incorrecta")
+
             );
 
 
